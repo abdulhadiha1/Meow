@@ -1,0 +1,416 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #1a1a1a;
+    overflow: hidden;
+  }
+
+  .scene {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .scene.active {
+    display: block;
+  }
+
+  .character {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    cursor: pointer;
+  }
+
+  .character img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* ========================= */
+  /* Scene 1 - 2 Frames */
+  /* ========================= */
+
+  .s1-frame1 {
+    animation: s1blink1 1.5s steps(1) infinite;
+  }
+
+  .s1-frame2 {
+    animation: s1blink2 1.5s steps(1) infinite;
+  }
+
+  @keyframes s1blink1 {
+    0%, 49.99% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+  }
+
+  @keyframes s1blink2 {
+    0%, 49.99% { opacity: 0; }
+    50%, 100% { opacity: 1; }
+  }
+
+  /* ========================= */
+  /* Scene 6 - 3 Frames */
+  /* ========================= */
+
+  .s6-frame1 {
+    animation: s6blink1 1s steps(1) infinite;
+  }
+
+  .s6-frame2 {
+    animation: s6blink2 1s steps(1) infinite;
+  }
+
+  .s6-frame3 {
+    animation: s6blink3 1s steps(1) infinite;
+  }
+
+  @keyframes s6blink1 {
+    0%, 32.99% { opacity: 1; }
+    33%, 100% { opacity: 0; }
+  }
+
+  @keyframes s6blink2 {
+    0%, 32.99% { opacity: 0; }
+    33%, 65.99% { opacity: 1; }
+    66%, 100% { opacity: 0; }
+  }
+
+  @keyframes s6blink3 {
+    0%, 65.99% { opacity: 0; }
+    66%, 100% { opacity: 1; }
+  }
+
+  /* ========================= */
+  /* Scene 8 - 4 Frames */
+  /* ========================= */
+
+  .s8-frame1 {
+    animation: s8blink1 2s steps(1) infinite;
+  }
+
+  .s8-frame2 {
+    animation: s8blink2 2s steps(1) infinite;
+  }
+
+  .s8-frame3 {
+    animation: s8blink3 2s steps(1) infinite;
+  }
+
+  .s8-frame4 {
+    animation: s8blink4 2s steps(1) infinite;
+  }
+
+  @keyframes s8blink1 {
+    0%, 24.99% { opacity: 1; }
+    25%, 100% { opacity: 0; }
+  }
+
+  @keyframes s8blink2 {
+    0%, 24.99% { opacity: 0; }
+    25%, 49.99% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+  }
+
+  @keyframes s8blink3 {
+    0%, 49.99% { opacity: 0; }
+    50%, 74.99% { opacity: 1; }
+    75%, 100% { opacity: 0; }
+  }
+
+  @keyframes s8blink4 {
+    0%, 74.99% { opacity: 0; }
+    75%, 100% { opacity: 1; }
+  }
+
+</style>
+</head>
+
+<body>
+
+<!-- ========================= -->
+<!-- Background Music -->
+<!-- ========================= -->
+
+<audio id="bgMusic" autoplay preload="auto">
+  <source
+    src="ssstik.io_1794412690885.mp3"
+    type="audio/mpeg">
+</audio>
+
+<audio id="bg1Music" autoplay preload="auto">
+  <source
+    src="ssstik.io_1794412731615.mp4"
+    type="audio/mp4">
+</audio>
+
+
+<!-- ========================= -->
+<!-- Scene 1 -->
+<!-- ========================= -->
+
+<div class="scene active" id="scene-1">
+  <div class="character" onclick="goToScene('scene-2')">
+
+    <img src="left.jpg" class="s1-frame1">
+    <img src="right.jpg" class="s1-frame2">
+
+  </div>
+</div>
+
+
+<!-- ========================= -->
+<!-- Scene 2 -->
+<!-- ========================= -->
+
+<div class="scene" id="scene-2">
+  <div class="character" onclick="goToScene('scene-3')">
+
+    <img src="KITTY AND LENA.jpg~.jpg">
+
+  </div>
+</div>
+
+
+<!-- ========================= -->
+<!-- Scene 3 -->
+<!-- ========================= -->
+
+<div class="scene" id="scene-3">
+  <div class="character" onclick="goToScene('scene-4')">
+
+    <img src="dropped.jpg">
+
+  </div>
+</div>
+
+
+<!-- ========================= -->
+<!-- Scene 4 -->
+<!-- ========================= -->
+
+<div class="scene" id="scene-4">
+  <div class="character" onclick="goToScene('scene-5')">
+
+    <img src="letter.jpg">
+
+  </div>
+</div>
+
+
+<!-- ========================= -->
+<!-- Scene 5 -->
+<!-- ========================= -->
+
+<div class="scene" id="scene-5">
+  <div class="character" onclick="goToScene('scene-6')">
+
+    <img src="pet.jpg">
+
+  </div>
+</div>
+
+
+<!-- ========================= -->
+<!-- Scene 6 -->
+<!-- ========================= -->
+
+<div class="scene" id="scene-6">
+  <div class="character" onclick="goToScene('scene-7')">
+
+    <img src="sunMiddle.jpg" class="s6-frame1">
+    <img src="sunLeft.jpg" class="s6-frame2">
+    <img src="sunRight.jpg" class="s6-frame3">
+
+  </div>
+</div>
+
+
+<!-- ========================= -->
+<!-- Scene 7 -->
+<!-- ========================= -->
+
+<div class="scene" id="scene-7">
+  <div class="character" onclick="goToScene('scene-8')">
+
+    <img src="table.png">
+
+  </div>
+</div>
+
+
+<!-- ========================= -->
+<!-- Scene 8 -->
+<!-- ========================= -->
+
+<div class="scene" id="scene-8">
+  <div class="character" onclick="goToScene('scene-9')">
+
+    <img src="noCandels.png" class="s8-frame1">
+    <img src="candle1.png" class="s8-frame2">
+    <img src="candle2.png" class="s8-frame3">
+    <img src="candle3.png" class="s8-frame4">
+
+  </div>
+</div>
+
+
+<!-- ========================= -->
+<!-- Scene 9 - END -->
+<!-- ========================= -->
+
+<div class="scene" id="scene-9">
+  <div class="character" onclick="goToScene('scene-9')">
+
+    <img src="END.png">
+
+  </div>
+</div>
+
+
+<script>
+
+  /* ========================= */
+  /* MUSIC SYSTEM - NO REPEAT */
+  /* ========================= */
+
+  const bgMusic = document.getElementById("bgMusic");
+  const bg1Music = document.getElementById("bg1Music");
+
+  bgMusic.volume = 0.15;
+  bg1Music.volume = 0.5;
+
+  // Disable looping completely
+  bgMusic.loop = false;
+  bg1Music.loop = false;
+
+  const allMusic = [bgMusic, bg1Music];
+
+  // Keep track of finished songs
+  const finishedMusic = new WeakSet();
+
+  allMusic.forEach(function(audio) {
+
+    audio.addEventListener("ended", function() {
+
+      finishedMusic.add(audio);
+
+      console.log("Music finished - no replay");
+
+    });
+
+  });
+
+  // Attempt to start music
+  function playMusic() {
+
+    allMusic.forEach(function(audio) {
+
+      // Never restart a finished song
+      if (finishedMusic.has(audio) || audio.ended) {
+        return;
+      }
+
+      if (audio.paused) {
+
+        audio.play().catch(function(error) {
+
+          console.log("Audio playback blocked:", error);
+
+        });
+
+      }
+
+    });
+
+  }
+
+  // Try to autoplay on page load
+  window.addEventListener("load", function() {
+
+    playMusic();
+
+  });
+
+  // Fallback when autoplay is blocked
+  document.addEventListener("pointerdown", function() {
+
+    playMusic();
+
+  });
+
+  document.addEventListener("keydown", function() {
+
+    playMusic();
+
+  });
+
+
+  /* ========================= */
+  /* SCENE SYSTEM */
+  /* ========================= */
+
+  function showScene(id) {
+
+    document.querySelectorAll(".scene").forEach(function(s) {
+      s.classList.remove("active");
+    });
+
+    var target = document.getElementById(id);
+
+    if (target) {
+      target.classList.add("active");
+    }
+
+  }
+
+  // Move to another scene
+  function goToScene(id) {
+
+    window.location.hash = id;
+
+  }
+
+  // Handle back and forward buttons
+  window.addEventListener("hashchange", function() {
+
+    var id = window.location.hash.replace("#", "") || "scene-1";
+
+    showScene(id);
+
+  });
+
+  // Initialize website
+  window.addEventListener("DOMContentLoaded", function() {
+
+    var id = window.location.hash.replace("#", "") || "scene-1";
+
+    if (!window.location.hash) {
+      window.location.hash = "scene-1";
+    }
+
+    showScene(id);
+
+  });
+
+</script>
+
+</body>
+</html>
